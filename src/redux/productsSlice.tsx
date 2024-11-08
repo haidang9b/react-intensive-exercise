@@ -3,7 +3,6 @@ import httpClient from "../commons/httpClient";
 import {Status} from "../commons/constants";
 import Product from "../types/Product";
 
-
 const productsSlice = createSlice({
     name: "products",
     initialState: {
@@ -42,6 +41,6 @@ export const fetchProducts = createAsyncThunk(
     }
 );
 
-export const productsSelector = (state: any) => state.products;
+export const productsSelector = (state: { products: { products: Product[] } }) => state.products;
 
 export default productsSlice;
